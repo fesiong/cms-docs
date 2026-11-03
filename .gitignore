@@ -1,0 +1,23 @@
+# Python 虚拟环境（仅本地使用，不入库）
+.venv/
+venv/
+env/
+
+# MkDocs 构建产物
+site/
+_site/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 系统文件
+.DS_Store
+**/.DS_Store
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+.workbuddy

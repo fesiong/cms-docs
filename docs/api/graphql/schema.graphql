@@ -1,0 +1,1462 @@
+#
+type BannerItem {
+  #
+  alt: String
+
+  #
+  description: String
+
+  #
+  id: Int
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  type: String
+}
+
+#
+type Nav {
+  #
+  description: String
+
+  #
+  id: Int
+
+  #
+  is_current: Boolean
+
+  #
+  level: Int
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  nav_list: [Nav]
+
+  #
+  nav_type: Int
+
+  #
+  page_id: Int
+
+  #
+  parent_id: Int
+
+  #
+  sort: Int
+
+  #
+  spacer: String
+
+  #
+  status: Int
+
+  #
+  style: String
+
+  #
+  sub_title: String
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  type_id: Int
+}
+
+#
+type User {
+  #
+  avatar_url: String
+
+  #
+  balance: Int
+
+  #
+  email: String
+
+  #
+  email_verified: Boolean
+
+  #
+  expire_time: Int
+
+  #
+  extra: JSON
+
+  #
+  full_avatar_url: String
+
+  #
+  group: UserGroup
+
+  #
+  group_id: Int
+
+  #
+  id: Int
+
+  #
+  introduce: String
+
+  #
+  invite_code: String
+
+  #
+  is_retailer: Int
+
+  #
+  last_login: Int
+
+  #
+  link: String
+
+  #
+  parent_id: Int
+
+  #
+  phone: String
+
+  #
+  real_name: String
+
+  #
+  status: Int
+
+  #
+  token: String
+
+  #
+  total_reward: Int
+
+  #
+  url_token: String
+
+  #
+  user_name: String
+}
+
+#
+type UserGroupSetting {
+  #
+  content_no_captcha: Boolean
+
+  #
+  content_no_verify: Boolean
+
+  #
+  discount: Int
+
+  #
+  expire_day: Int
+
+  #
+  parent_reward: Int
+
+  #
+  share_reward: Int
+}
+
+# The JSON scalar type represents JSON values
+scalar JSON
+
+#
+type Category {
+  #
+  archive_count: Int
+
+  #
+  content: String
+
+  #
+  description: String
+
+  #
+  detail_template: String
+
+  #
+  extra: JSON
+
+  #
+  has_children: Boolean
+
+  #
+  id: Int
+
+  #
+  images: [String]
+
+  #
+  is_current: Boolean
+
+  #
+  is_inherit: Int
+
+  #
+  keywords: String
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  module_id: Int
+
+  #
+  parent_id: Int
+
+  #
+  seo_title: String
+
+  #
+  sort: Int
+
+  #
+  spacer: String
+
+  #
+  status: Int
+
+  #
+  template: String
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  type: Int
+
+  #
+  url_token: String
+}
+
+#
+type IndexSetting {
+  #
+  seo_description: String
+
+  #
+  seo_keywords: String
+
+  #
+  seo_title: String
+}
+
+#
+type Archive {
+  #
+  allow_oversold: Boolean
+
+  #
+  amount: Int
+
+  #
+  canonical_url: String
+
+  #
+  cart_id: Int
+
+  #
+  category: Category
+
+  #
+  category_id: Int
+
+  #
+  category_ids: [Int]
+
+  #
+  category_titles: [String]
+
+  #
+  comment_count: Int
+
+  #
+  content: String
+
+  #
+  cost_price: Int
+
+  #
+  created_time: Int
+
+  #
+  description: String
+
+  #
+  extra: JSON
+
+  #
+  favorable_price: Int
+
+  #
+  favorite_count: Int
+
+  #
+  fixed_link: String
+
+  #
+  flag: String
+
+  #
+  has_order_fields: Boolean
+
+  #
+  has_ordered: Boolean
+
+  #
+  has_password: Boolean
+
+  #
+  has_pseudo: Int
+
+  #
+  id: Int
+
+  #
+  images: [String]
+
+  #
+  is_favorite: Boolean
+
+  #
+  is_free_shipping: Boolean
+
+  #
+  is_wholesale: Boolean
+
+  #
+  keyword_id: Int
+
+  #
+  keywords: String
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  module_id: Int
+
+  #
+  module_name: String
+
+  #
+  need_logistics: Boolean
+
+  #
+  option_type: Int
+
+  #
+  options: [ArchiveOption]
+
+  #
+  order_extra: JSON
+
+  #
+  origin_amount: Int
+
+  #
+  origin_id: Int
+
+  #
+  origin_price: Int
+
+  #
+  origin_title: String
+
+  #
+  origin_url: String
+
+  #
+  parent_id: Int
+
+  #
+  password: String
+
+  #
+  password_valid: Boolean
+
+  #
+  price: Int
+
+  #
+  quantity: Int
+
+  #
+  read_level: Int
+
+  #
+  review_count: Int
+
+  #
+  seo_title: String
+
+  #
+  sold_count: Int
+
+  #
+  sort: Int
+
+  #
+  stock: Int
+
+  #
+  tags: [Tag]
+
+  #
+  template: String
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  type: String
+
+  #
+  updated_time: Int
+
+  #
+  url_token: String
+
+  #
+  user_id: Int
+
+  #
+  video_url: String
+
+  #
+  views: Int
+
+  #
+  weight: Float
+
+  #
+  weight_unit: String
+
+  #
+  wholesale_rule: WholesaleRule
+
+  #
+  wholesale_rules: [WholesaleRule]
+}
+
+#
+type WholesaleRule {
+  #
+  archive_id: Int
+
+  #
+  created_time: Int
+
+  #
+  discount_rate: Int
+
+  #
+  id: Int
+
+  #
+  max_quantity: Int
+
+  #
+  min_quantity: Int
+
+  #
+  sku_id: Int
+
+  #
+  updated_time: Int
+}
+
+#
+type ArchiveOption {
+  #
+  archive_id: Int
+
+  #
+  created_time: Int
+
+  #
+  id: Int
+
+  #
+  is_main: Int
+
+  #
+  sort: Int
+
+  #
+  title: String
+
+  #
+  updated_time: Int
+
+  #
+  values: [ArchiveOptionValue]
+}
+
+#
+type ArchiveOptionValue {
+  #
+  archive_id: Int
+
+  #
+  color: String
+
+  #
+  created_time: Int
+
+  #
+  id: Int
+
+  #
+  option_id: Int
+
+  #
+  price: Int
+
+  #
+  sort: Int
+
+  #
+  title: String
+
+  #
+  updated_time: Int
+}
+
+#
+type Page {
+  #
+  content: String
+
+  #
+  description: String
+
+  #
+  id: Int
+
+  #
+  images: [String]
+
+  #
+  is_current: Boolean
+
+  #
+  keywords: String
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  seo_title: String
+
+  #
+  status: Int
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  url_token: String
+}
+
+#
+type ReviewList {
+  #
+  items: [Review]
+
+  #
+  page: Int
+
+  #
+  total: Int
+}
+
+#
+type Review {
+  #
+  archive_id: Int
+
+  #
+  archive_sku_id: Int
+
+  #
+  archive_title: String
+
+  #
+  avatar_url: String
+
+  #
+  content: String
+
+  #
+  created_time: Int
+
+  #
+  email: String
+
+  #
+  id: Int
+
+  #
+  images: [String]
+
+  #
+  ip: String
+
+  #
+  order_id: String
+
+  #
+  score: Int
+
+  #
+  sku_title: String
+
+  #
+  status: Int
+
+  #
+  user_id: Int
+
+  #
+  user_name: String
+}
+
+#
+type CommentList {
+  #
+  items: [Comment]
+
+  #
+  page: Int
+
+  #
+  total: Int
+}
+
+#
+type ArchiveList {
+  #
+  items: [Archive]
+
+  #
+  page: Int
+
+  #
+  total: Int
+}
+
+#
+type Sku {
+  #
+  currency: String
+
+  #
+  currency_symbol: String
+
+  #
+  has_sku: Boolean
+
+  #
+  id: Int
+
+  #
+  max_price: Int
+
+  #
+  min_price: Int
+
+  #
+  options: [ArchiveOption]
+
+  #
+  order_count: Int
+
+  #
+  price: Int
+
+  #
+  quota_used: Int
+
+  #
+  skus: [ArchiveSku]
+
+  #
+  stock: Int
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  user_limit: Int
+
+  #
+  wholesale_rules: [WholesaleRule]
+}
+
+#
+type TagList {
+  #
+  items: [Tag]
+
+  #
+  page: Int
+
+  #
+  total: Int
+}
+
+#
+type Mutation {
+  #
+  createReview(
+    order_id: Int
+    user_name: String
+    email: String
+    content: String!
+    score: Int!
+    images: [String]
+    id: Int
+  ): Review
+}
+
+#
+type ContactSetting {
+  #
+  address: String
+
+  #
+  cellphone: String
+
+  #
+  email: String
+
+  #
+  extra_fields: [ExtraField]
+
+  #
+  facebook: String
+
+  #
+  instagram: String
+
+  #
+  linkedin: String
+
+  #
+  pinterest: String
+
+  #
+  qq: String
+
+  #
+  qrcode: String
+
+  #
+  tiktok: String
+
+  #
+  twitter: String
+
+  #
+  user_name: String
+
+  #
+  wechat: String
+
+  #
+  whats_app: String
+
+  #
+  youtube: String
+}
+
+#
+type ExtraField {
+  #
+  content: String
+
+  #
+  name: String
+
+  #
+  remark: String
+
+  #
+  type: String
+
+  #
+  value: JSON
+}
+
+#
+type CurrencySetting {
+  #
+  currency: String
+
+  #
+  name: String
+
+  #
+  symbol: String
+}
+
+#
+type PageMeta {
+  #
+  canonical_url: String
+
+  #
+  current_page: Int
+
+  #
+  description: String
+
+  #
+  image: String
+
+  #
+  keywords: String
+
+  #
+  module_id: Int
+
+  #
+  nav_bar: Int
+
+  #
+  page_id: Int
+
+  #
+  page_name: String
+
+  #
+  params: JSON
+
+  #
+  status_code: Int
+
+  #
+  title: String
+
+  #
+  total_pages: Int
+}
+
+#
+type FriendLink {
+  #
+  back_link: String
+
+  #
+  checked_time: Int
+
+  #
+  contact: String
+
+  #
+  id: Int
+
+  #
+  link: String
+
+  #
+  my_link: String
+
+  #
+  my_title: String
+
+  #
+  nofollow: Int
+
+  #
+  remark: String
+
+  #
+  sort: Int
+
+  #
+  status: Int
+
+  #
+  title: String
+}
+
+#
+type ArchiveSku {
+  #
+  archive_id: Int
+
+  #
+  barcode: String
+
+  #
+  cost_price: Int
+
+  #
+  created_time: Int
+
+  #
+  hs_code: String
+
+  #
+  id: Int
+
+  #
+  logo: String
+
+  #
+  origin_price: Int
+
+  #
+  price: Int
+
+  #
+  sku: String
+
+  #
+  sold_count: Int
+
+  #
+  stock: Int
+
+  #
+  symbol: String
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  updated_time: Int
+
+  #
+  weight: Int
+
+  #
+  weight_unit: Int
+}
+
+#
+type UserGroup {
+  #
+  description: String
+
+  #
+  favorable_price: Int
+
+  #
+  id: Int
+
+  #
+  level: Int
+
+  #
+  price: Int
+
+  #
+  setting: UserGroupSetting
+
+  #
+  status: Int
+
+  #
+  title: String
+}
+
+#
+type Query {
+  #
+  archive(
+    password: String
+    id: Int
+    filename: String
+    url_token: String
+    render: Boolean
+  ): Archive
+
+  #
+  archiveParams(
+    filename: String
+    url_token: String
+    render: Boolean
+    id: Int
+  ): [CustomField]
+
+  #
+  archives(
+    parent_id: Int
+    exclude_category_id: Int
+    exclude_category_ids: [Int]
+    module_id: Int
+    user_id: Int
+    show_flag: Boolean
+    draft: Boolean
+    author_id: Int
+    q: String
+    like: String
+    keywords: String
+    type: String
+    limit: Int
+    render: Boolean
+    category_id: Int
+    tag_id: Int
+    flag: String
+    page: Int
+    category_ids: [Int]
+    show_content: Boolean
+    show_extra: Boolean
+    child: Boolean
+    order: String
+    tag: String
+    offset: Int
+    id: Int
+  ): ArchiveList
+
+  #
+  banners(type: String): [BannerItem]
+
+  #
+  categories(
+    parent_id: Int
+    module_id: Int
+    all: Boolean
+    limit: Int
+    offset: Int
+  ): [Category]
+
+  #
+  category(
+    id: Int
+    filename: String
+    catname: String
+    url_token: String
+    render: Boolean
+  ): Category
+
+  #
+  comments(
+    order: String
+    page: Int
+    limit: Int
+    offset: Int
+    render: Boolean
+    id: Int
+    user_id: Int
+  ): CommentList
+
+  #
+  contact: ContactSetting
+
+  #
+  currency: CurrencySetting
+
+  #
+  diy(render: Boolean): [ExtraField]
+
+  #
+  filters(
+    module_id: Int
+    show_all: Boolean
+    all_text: String
+    show_price: Boolean
+  ): [FilterGroup]
+
+  #
+  friendLinks: [FriendLink]
+
+  #
+  guestbookFields: [CustomField]
+
+  #
+  index: IndexSetting
+
+  #
+  languages: [MultiLangSite]
+
+  #
+  metadata(path: String, params: JSON): PageMeta
+
+  #
+  module(filename: String, url_token: String, id: Int): Module
+
+  #
+  modules: [Module]
+
+  #
+  navs(type_id: Int, show_type: String): [Nav]
+
+  #
+  page(render: Boolean, id: Int, filename: String, url_token: String): Page
+
+  #
+  pages(limit: Int, offset: Int): [Page]
+
+  #
+  reviews(
+    user_id: Int
+    order: String
+    page: Int
+    limit: Int
+    offset: Int
+    render: Boolean
+    id: Int
+  ): ReviewList
+
+  #
+  sku(id: Int, filename: String, url_token: String): Sku
+
+  #
+  system: SystemSetting
+
+  #
+  tag(url_token: String, render: Boolean, id: Int, filename: String): Tag
+
+  #
+  tags(
+    letter: String
+    page: Int
+    item_id: Int
+    category_id: Int
+    type: String
+    order: String
+    limit: Int
+    offset: Int
+    category_ids: [Int]
+  ): TagList
+
+  #
+  user(id: Int): User
+}
+
+#
+type SystemSetting {
+  #
+  admin_url: String
+
+  #
+  ban_spider: Int
+
+  #
+  base_url: String
+
+  #
+  currency: String
+
+  #
+  default_site: Boolean
+
+  #
+  extra_fields: [ExtraField]
+
+  #
+  favicon: String
+
+  #
+  language: String
+
+  #
+  mobile_url: String
+
+  #
+  site_close: Int
+
+  #
+  site_close_tips: String
+
+  #
+  site_copyright: String
+
+  #
+  site_icp: String
+
+  #
+  site_logo: String
+
+  #
+  site_name: String
+
+  #
+  template_name: String
+
+  #
+  template_type: Int
+
+  #
+  template_url: String
+}
+
+#
+type FilterItem {
+  #
+  is_current: Boolean
+
+  #
+  label: String
+
+  #
+  link: String
+
+  #
+  total: Int
+}
+
+#
+type MultiLangSite {
+  #
+  base_url: String
+
+  #
+  id: Int
+
+  #
+  is_current: Boolean
+
+  #
+  language: String
+
+  #
+  language_emoji: String
+
+  #
+  language_icon: String
+
+  #
+  language_name: String
+
+  #
+  link: String
+
+  #
+  name: String
+
+  #
+  parent_id: Int
+
+  #
+  status: Boolean
+
+  #
+  sync_time: Int
+}
+
+#
+type CustomField {
+  #
+  content: String
+
+  #
+  field_name: String
+
+  #
+  follow_level: Boolean
+
+  #
+  is_filter: Boolean
+
+  #
+  is_system: Boolean
+
+  #
+  items: [String]
+
+  #
+  name: String
+
+  #
+  required: Boolean
+
+  #
+  type: String
+}
+
+#
+type Range {
+  #
+  max: Int
+
+  #
+  min: Int
+}
+
+#
+type Tag {
+  #
+  category_id: Int
+
+  #
+  category_title: String
+
+  #
+  content: String
+
+  #
+  description: String
+
+  #
+  extra: JSON
+
+  #
+  first_letter: String
+
+  #
+  id: Int
+
+  #
+  keywords: String
+
+  #
+  link: String
+
+  #
+  logo: String
+
+  #
+  seo_title: String
+
+  #
+  status: Int
+
+  #
+  template: String
+
+  #
+  thumb: String
+
+  #
+  title: String
+
+  #
+  url_token: String
+}
+
+#
+type FilterGroup {
+  #
+  field_name: String
+
+  #
+  items: [FilterItem]
+
+  #
+  name: String
+
+  #
+  range: Range
+}
+
+#
+type Comment {
+  #
+  active: Boolean
+
+  #
+  archive_id: Int
+
+  #
+  content: String
+
+  #
+  created_time: Int
+
+  #
+  id: Int
+
+  #
+  ip: String
+
+  #
+  item_title: String
+
+  #
+  parent: Comment
+
+  #
+  parent_id: Int
+
+  #
+  status: Int
+
+  #
+  to_uid: Int
+
+  #
+  user_id: Int
+
+  #
+  user_name: String
+
+  #
+  vote_count: Int
+}
+
+#
+type Module {
+  #
+  description: String
+
+  #
+  id: Int
+
+  #
+  is_system: Int
+
+  #
+  keywords: String
+
+  #
+  link: String
+
+  #
+  name: String
+
+  #
+  status: Int
+
+  #
+  table_name: String
+
+  #
+  title: String
+
+  #
+  title_name: String
+
+  #
+  url_token: String
+}

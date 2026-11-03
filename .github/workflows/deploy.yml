@@ -1,0 +1,58 @@
+name: 部署文档到 GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}      # 允许在 Actions 页面手动触发
+
+# 赋予 GITHUB_TOKEN 发布 Pages 所需的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个发布任务，避免并发冲突
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: 安装构建依赖
+        run: pip install -r requirements.txt
+
+      - name: 构建静态站点
+        # 产物输出到 _site 目录（与 upload-pages-artifact 默认一致）
+        run: mkdocs build -d _site
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

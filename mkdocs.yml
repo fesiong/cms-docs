@@ -1,0 +1,353 @@
+site_name: AICMS 文档
+site_url: https://fesiong.github.io/cms-docs/
+site_description: AICMS 使用手册与 API 接口文档
+site_author: AICMS
+repo_url: https://github.com/fesiong/cms-docs
+repo_name: fesiong/cms-docs
+edit_uri: edit/main/docs/
+docs_dir: docs
+use_directory_urls: true
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 切换深色模式
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色模式
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fesiong/cms-docs
+
+nav:
+  - 首页: index.md
+  - 使用手册:
+    - 使用手册首页: manual/index.md
+    - 模板手册使用指南: manual/1-guide.md
+    - 文档标签:
+      - 文档列表标签: manual/tag-archiveList.md
+      - 文档详情标签: manual/tag-archiveDetail.md
+      - 上一篇文档标签: manual/tag-prevArchive.md
+      - 下一篇文档标签: manual/tag-nextArchive.md
+      - 相关文档标签: manual/tag-relatedArchive.md
+      - 文档参数标签: manual/tag-archiveParams.md
+      - 文档参数筛选标签: manual/tag-archiveFilters.md
+      - 文档模型详情标签: manual/tag-moduleDetail.md
+    - 分类页面标签:
+      - 分类列表标签: manual/tag-categoryList.md
+      - 分类详情标签: manual/tag-categoryDetail.md
+      - 单页面列表标签: manual/tag-pageList.md
+      - 单页面详情标签: manual/tag-pageDetail.md
+    - 文档Tag标签:
+      - 文档Tag列表标签: manual/tag-archiveTag.md
+      - Tag详情标签: manual/tag-tagDetail.md
+      - Tag文档列表标签: manual/tag-tagDataList.md
+    - 城市分站标签:
+      - 城市分站详情标签: manual/tag-placeDetail.md
+      - 城市分站列表标签: manual/tag-placeList.md
+    - 商城标签:
+      - 获取产品SKU标签: manual/tag-archiveSku.md
+      - 格式化价格标签: manual/tag-priceFormat.md
+      - 产品评价列表标签: manual/tag-reviewList.md
+    - 留言与评论标签:
+      - 评论列表标签: manual/tag-commentList.md
+      - 留言表单标签: manual/tag-guestbook.md
+      - 留言验证码使用标签: manual/tag-captcha.md
+    - 常用标签:
+      - 系统设置标签: manual/tag-system.md
+      - 联系方式标签: manual/tag-contact.md
+      - 万能TDK标签: manual/tag-tdk.md
+      - 导航列表标签: manual/tag-navList.md
+      - 面包屑导航标签: manual/tag-breadcrumb.md
+      - 分页标签: manual/tag-pagination.md
+      - 友情链接标签: manual/tag-linkList.md
+      - 首页 Banner 列表标签: manual/tag-bannerList.md
+      - 获取多语言站点列表标签: manual/tag-languages.md
+      - Json-LD 自定义调用标签: manual/tag-jsonLd.md
+      - 统计代码标签: manual/tag-tongji.md
+      - 翻译标签: manual/tag-tr.md
+      - 用户详情标签: manual/tag-userDetail.md
+      - 用户分组详情标签: manual/tag-userGroupDetail.md
+    - 其它标签:
+      - if逻辑判断标签: manual/tag-if.md
+      - for循环遍历标签: manual/tag-for.md
+      - 算术运算标签: manual/tag-calc.md
+      - 格式化时间戳标签: manual/tag-stampToDate.md
+      - 定义变量赋值标签: manual/tag-with.md
+      - 其他辅助标签: manual/tag-tags.md
+      - 更多过滤器: manual/tag-filters.md
+      - 移除逻辑标签占用行: manual/tag-remove.md
+      - 模板自定义内容标签: manual/tag-diy.md
+      - 生成随机文本: manual/tag-lorem.md
+    - 模板过滤器:
+      - 数值与随机:
+        - 数字或字符串相加: manual/filter-add.md
+        - 判断一个数字是否可以作为被除数: manual/filter-divisibleby.md
+        - 浮点数保留指定位数小数点: manual/filter-floatformat.md
+        - 获取数字中指定位置的数字: manual/filter-get_digit.md
+        - 转换数字字符串为浮点数或整数: manual/filter-integer.md
+        - 将手机数字键盘字母转换为数字: manual/filter-phone2numeric.md
+        - 返回字符串、数组中的随机一个字符、值: manual/filter-random.md
+      - 字符串处理:
+        - 预定义字符前添加反斜杠: manual/filter-addslashes.md
+        - 将英文字符串字母转换为大写或小写: manual/filter-capfirst.md
+        - 将字符串按指定长度格式居中、靠左、靠右显示: manual/filter-center.md
+        - 移除字符串任意位置中的指定字符: manual/filter-cut.md
+        - 将字符串、js 代码中的特殊字符转义: manual/filter-escape.md
+        - 单词的复数形式: manual/filter-pluralize.md
+        - 指定重复多次输出字符串: manual/filter-repeat.md
+        - 替换字符串中某个特定关键词为另一个关键词: manual/filter-replace.md
+        - 截取符串、数组中指定位置的元素: manual/filter-slice.md
+        - 将任意值格式化成字符串输出: manual/filter-stringformat.md
+        - 删除字符串所有前导和尾随空格、特定字符: manual/filter-trim.md
+        - 对字符串或 html 代码进行截取并添加...: manual/filter-truncatechars.md
+        - url 参数转义: manual/filter-urlencode.md
+        - 计算字符串中单词数量: manual/filter-wordcount.md
+        - 长文本自动换行: manual/filter-wordwrap.md
+      - 数组与列表:
+        - 判断文字、数组是否包含指定关键词: manual/filter-contain.md
+        - 计算某个关键词在一行字符串中出现的次数、数组中出现次数: manual/filter-count.md
+        - 将一行文字按空格拆分成数组: manual/filter-fields.md
+        - 字符串或数组第一个值或最后一个值: manual/filter-first.md
+        - 获取某个关键词在一行字符串或数组中出现的位置: manual/filter-index.md
+        - 将数组按指定拼接字符链接成字符串: manual/filter-join.md
+        - 获取字符串、数组、键值对的长度: manual/filter-length.md
+        - 在模板中定义数组: manual/filter-list.md
+        - 字符串按指定分隔符切割成数组: manual/filter-split.md
+      - 日期、内容与媒体渲染:
+        - 将时间值按指定格式显示: manual/filter-date.md
+        - 将多行文本按换行符转换成 html 标签: manual/filter-linebreaks.md
+        - 移除 html 代码中的 html 标签: manual/filter-removetags.md
+        - 渲染Markdown内容为HTML: manual/filter-render.md
+        - 将 HTML 代码解析输出，不转义: manual/filter-safe.md
+        - 查找并将文本中的 url 字符串解析成可点击的 a 标签: manual/filter-urlize.md
+        - 获取图片的缩略图: manual/filter-thumb.md
+      - 逻辑判断与调试:
+        - 数字或字符串、对象默认值设置: manual/filter-default.md
+        - 打印变量的结构类型和值: manual/filter-dump.md
+        - 将变量转换成JSON输出: manual/filter-json.md
+        - 或与非三种状态: manual/filter-yesno.md
+  - 帮助文档:
+    - 帮助文档首页: help/index.md
+    - 基础说明:
+      - 认识 AICMS: help/aicms.md
+      - 开始使用: help/start.md
+      - 常见问题: help/faq.md
+      - 开发计划: help/schedule.md
+      - 更新日志: help/changelog.md
+    - 入门与基础:
+      - AICMS 安装步骤教程: help/install.md
+      - Apache 配置反向代理: help/apache.md
+      - 使用1Panel的Docker安装AICMS教程: help/docker-1panel.md
+      - One-Click Deployment of AICMS with aaPanel: help/docker-aapanel.md
+      - 使用宝塔的Docker安装AICMS教程: help/docker-bt.md
+      - 通过反向代理添加AICMS多站点教程: help/docker-bt-proxy.md
+    - 模板制作:
+      - 一些基本约定: help/design-convention.md
+      - 目录和模板: help/design-director.md
+      - 标签和用法: help/design-tag.md
+    - 使用帮助:
+      - 后台功能介绍: help/help-index.md
+      - 全局设置: help/help-setting-system.md
+      - 内容设置: help/help-setting-content.md
+      - 联系方式设置: help/help-setting-contact.md
+      - 首页TDK设置: help/help-setting-tdk.md
+      - 导航设置: help/help-setting-nav.md
+      - 文档管理: help/help-content-list.md
+      - 发布文档: help/help-content-archive.md
+      - 文档分类: help/help-content-category.md
+      - 文档标签: help/help-content-tag.md
+      - 内容模型: help/help-content-module.md
+      - 页面管理: help/help-source-page.md
+      - 图片资源管理: help/help-source-attachment.md
+      - 伪静态规则: help/help-plugin-rewrite.md
+      - 链接推送: help/help-plugin-push.md
+      - help-markdown: help/help-markdown.md
+  - API 文档:
+    - API 文档总览: api/index.md
+    - API 接口使用指南: api/api-guide.md
+    - 导入:
+      - 导入文档接口: api/importArchive.md
+      - 检查文档是否存在接口: api/importArchiveCheck.md
+      - 获取文档分类接口: api/importCategories.md
+      - 添加友情链接接口: api/importLink.md
+      - 删除友情链接接口: api/importLinkDel.md
+      - 检查友情链接是否可用接口: api/importLinkCheck.md
+      - 导入图片资源接口: api/importAttachment.md
+      - 手动Sitemap更新接口: api/importMakeSitemap.md
+    - 文档接口:
+      - 获取文档列表接口: api/archiveList.md
+      - 获取文档详情接口: api/archiveDetail.md
+      - 获取上一个文档接口: api/archivePrev.md
+      - 获取下一个文档接口: api/archiveNext.md
+      - 获取文档参数筛选条件接口: api/archiveFilters.md
+      - 获取文档参数接口: api/archiveParams.md
+      - 验证文档密码接口: api/archivePasswordCheck.md
+      - 获取收藏列表接口: api/favorites.md
+      - 添加收藏接口: api/favoriteAdd.md
+      - 删除收藏接口: api/favoriteRemove.md
+      - 检查是否收藏接口: api/favoriteCheck.md
+      - 发布文档接口: api/archivePublish.md
+      - 获取产品SKU接口: api/archiveSku.md
+    - 文档标签接口:
+      - 获取标签列表接口: api/tagList.md
+      - 获取标签详情接口: api/tagDetail.md
+      - 获取标签文档列表接口: api/tagDataList.md
+    - 城市分站接口:
+      - 获取城市分站详情接口: api/placeDetail.md
+      - 获取城市分站列表接口: api/placeList.md
+    - 分类页面接口:
+      - 获取分类列表接口: api/categoryList.md
+      - 获取分类详情接口: api/categoryDetail.md
+      - 获取单页详情接口: api/pageDetail.md
+      - 获取单页列表接口: api/pageList.md
+      - 获取模型列表接口: api/moduleList.md
+      - 获取模型详情接口: api/moduleDetail.md
+    - 用户接口:
+      - 用户登录接口: api/login.md
+      - 用户注册接口: api/register.md
+      - 用户信息接口: api/userDetail.md
+      - 更新用户信息接口: api/userDetailUpdate.md
+      - 更新用户头像接口: api/userAvatarUpdate.md
+      - 获取用户组列表接口: api/userGroups.md
+      - 获取用户组详情接口: api/userGroupDetail.md
+      - 用户退出接口: api/logout.md
+      - 发送Email验证接口: api/emailVerifySend.md
+      - 验证Email地址接口: api/emailVerify.md
+      - 更新用户密码接口: api/userPasswordUpdate.md
+      - 重置用户密码接口: api/userPasswordReset.md
+      - 获取谷歌登录跳转地址接口: api/googleUrl.md
+    - 订单接口:
+      - 获取订单列表接口: api/orders.md
+      - 获取订单统计数据接口: api/ordersStatistic.md
+      - 获取订单统计图表接口: api/ordersChart.md
+      - 获取商品Checkout信息接口: api/ordersCheckout.md
+      - 创建订单接口: api/orderCreate.md
+      - 获取订单详情接口: api/orderDetail.md
+      - 取消订单接口: api/orderCancel.md
+      - 订单申请退款接口: api/orderRefund.md
+      - 订单确认收货接口: api/orderFinished.md
+      - 订单创建支付接口: api/orderPayment.md
+      - 订单检查支付结果接口: api/paymentCheck.md
+      - 检查指定文档是否支付了接口: api/archiveOrderCheck.md
+      - 获取产品/订单评价列表接口: api/orderReviews.md
+      - 发表产品/订单评价接口: api/orderReviewPublish.md
+    - 订单地址与地区接口:
+      - 获取订单地址列表接口: api/orderAddresses.md
+      - 获取订单地址详情接口: api/orderAddress.md
+      - 保存订单地址接口: api/orderAddressSave.md
+      - 地址自动补全接口: api/placeAutocomplete.md
+      - 获取国家列表接口: api/placeCountries.md
+      - 获取城市列表接口: api/placeCountryCities.md
+      - 获取国家省份/州列表接口: api/placeCountryStates.md
+    - 沟通订单接口:
+      - 获取沟通定制订单字段接口: api/orderCommunicationFields.md
+      - 获取沟通定制订单列表: api/orderCommunicationList.md
+      - 创建沟通定制订单接口: api/orderCommunicationCreate.md
+      - 获取沟通定制订单详情接口: api/orderCommunicationDetail.md
+      - 更新沟通定制订单接口: api/orderCommunicationUpdate.md
+      - 沟通定制订单接受报价接口: api/orderCommunicationAcceptQuote.md
+      - 获取沟通定制订单沟通信息列表接口: api/orderCommunicationMessages.md
+      - 发送沟通定制订单信息接口: api/orderCommunicationMessageSend.md
+    - 购物车接口:
+      - 获取购物车列表接口: api/cartList.md
+      - 添加购物车接口: api/cartAdd.md
+      - 移除购物车商品接口: api/cartRemove.md
+      - 更新购物车接口: api/cartUpdate.md
+    - 优惠券接口:
+      - 获取可用优惠券列表接口: api/couponValidList.md
+      - 获取我的优惠券列表接口: api/couponCodeList.md
+      - 领取优惠券接口: api/couponCodeGet.md
+    - 愿望清单接口:
+      - 获取愿望清单列表接口: api/wishlist.md
+      - 添加愿望清单接口: api/wishlistAdd.md
+      - 移除愿望清单接口: api/wishlistRemove.md
+    - 活动与营销接口:
+      - 获取活动详情接口: api/activityDetail.md
+      - 获取活动列表接口: api/activityList.md
+      - 获取商品活动信息接口: api/archiveActivity.md
+    - 订单扩展接口:
+      - 获取订单自定义表单接口: api/orderCustomForm.md
+      - 保存订单自定义表单接口: api/orderCustomFormSave.md
+      - 获取订单服务列表接口: api/orderServices.md
+      - 获取配送信息接口: api/shippingInfo.md
+    - 分销接口:
+      - 获取分销员详情接口: api/retailerInfo.md
+      - 获取分销员统计信息接口: api/retailerStatistics.md
+      - 更新分销员真实姓名接口: api/retailerUpdate.md
+      - 获取分销订单列表接口: api/retailerOrders.md
+      - 获取提现列表接口: api/retailerWithdraws.md
+      - 申请提现接口: api/retailerWithdraw.md
+      - 获取分销团队列表接口: api/retailerMembers.md
+      - 获取分销员收益列表接口: api/retailerCommissions.md
+    - 留言与评论接口:
+      - 获取评论列表接口: api/commentList.md
+      - 发布评论接口: api/commentPublish.md
+      - 评论点赞接口: api/commentPraise.md
+      - 获取留言表单字段接口: api/guestbookFields.md
+      - 添加留言接口: api/guestbook.md
+    - 微信相关接口:
+      - 生成微信小程序码接口: api/weappQrcode.md
+      - 微信授权接口: api/wechatAuth.md
+      - 微信消息接收接口: api/wechat.md
+    - 其他接口:
+      - 获取友情链接列表接口: api/friendlinkList.md
+      - 获取系统设置接口: api/settingSystem.md
+      - 获取联系方式接口: api/settingContact.md
+      - 获取自定义字段接口: api/settingDiy.md
+      - 获取首页TDK接口: api/settingIndex.md
+      - 获取导航列表接口: api/navList.md
+      - 上传图片资源接口: api/attachmentUpload.md
+      - 获取多语言列表接口: api/languages.md
+      - 调用图形验证码接口: api/captcha.md
+      - 首页幻灯片列表接口: api/bannerList.md
+      - 邮件订阅接口: api/subscription.md
+      - 统计页面访问数据: api/logStatistic.md
+      - 公共 HTTP 头定义: api/api-header.md
+      - 页面元数据接口: api/metadata.md
+    - GraphQL接口:
+      - GraphQL 概览: api/graphql/README.md
+      - 查询 Queries: api/graphql/queries.md
+      - 变更 Mutations: api/graphql/mutations.md
+      - 对象 Objects: api/graphql/objects.md
+      - 标量 Scalars: api/graphql/scalars.md
