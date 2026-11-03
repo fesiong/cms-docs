@@ -242,6 +242,6 @@
 .md-nav__secondary .md-nav__link {
   font-size: 0.66rem;
 }
-.iniframe .md-header, .iniframe .md-footer, .iniframe .md-sidebar {
+.iniframe .md-header, .iniframe .md-footer, .iniframe .md-sidebar, .iniframe .md-toggle {
   display: none;
 }
