@@ -10,7 +10,6 @@
   `moduleId` 可以获取指定文档模型的文档列表如 `moduleId="1"` 获取文章模型的文档列表。
 - 分类 ID `categoryId`  
   `categoryId` 可以获取指定分类的文档列表如 `categoryId="1"` 获取文档分类 ID 为 1 的文档列表。多个分类 ID 可用,隔开，如 `categoryId="1,2,3"`。  
-  
   > 如果未指定 `categoryId` 它会尝试读取当前页面分类的分类 ID，因此如果希望它不自动读取当前分类 ID，则可以通过 `categoryId="0"` 来指定不自动读取。
 - 排除的分类 ID `excludeCategoryId`  
   `excludeCategoryId` 可以排除指定分类的文档如 `excludeCategoryId="1"` 排除文档分类 ID 为 1 的文档。多个分类 ID 可用,隔开
