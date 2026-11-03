@@ -11,6 +11,7 @@ use_directory_urls: true
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   features:
     - navigation.sections
     - navigation.top
@@ -20,15 +21,18 @@ theme:
     - search.suggest
     - search.highlight
   palette:
+    # primary/accent 设为 custom，实际色值由 docs/stylesheets/extra.css 中的
+    # --md-primary-fg-color 提供（对齐 AICMS 官方主色 #0068AB）。
+    # 若填 teal 等内置色名，主题的 palette.css 会重新声明该色并覆盖自定义值。
     - scheme: default
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: 切换深色模式
     - scheme: slate
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: 切换浅色模式
@@ -58,6 +62,10 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/fesiong/cms-docs
+
+# 自定义样式表（在主题自带 CSS 之后加载，具有最终覆盖权）
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - 首页: index.md

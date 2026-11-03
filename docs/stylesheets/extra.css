@@ -1,0 +1,247 @@
+/* ==========================================================================
+   AICMS 文档站 —— 自定义样式
+   --------------------------------------------------------------------------
+   加载顺序（Material 主题 base.html）：
+     main.min.css → palette.min.css → extra.css
+   因此本文件中的规则对同优先级选择器具有最终决定权，可直接覆盖主题默认值。
+
+   约定：
+   - 所有自定义属性统一收敛到 :root 下，便于一处修改、全站生效。
+   - 深色模式（slate）需单独覆盖配色，主题的 palette.css 对
+     [data-md-color-scheme="slate"] 提供了更高的属性选择器优先级。
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 品牌配色
+   主色取自 AICMS 前台模板的官方主色 #0068AB，与站点视觉保持一致。
+   -------------------------------------------------------------------------- */
+:root {
+  /* 主色三档：Material 用 light/dark 派生悬停与按下态 */
+  --md-primary-fg-color: #0068ab;
+  --md-primary-fg-color--light: #3d8bc4;
+  --md-primary-fg-color--dark: #004c7d;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+
+  --md-accent-fg-color: #0068ab;
+  --md-accent-fg-color--transparent: #0068ab1a;
+
+  /* AICMS 品牌辅助色 */
+  --aicms-blue: #0068ab;
+  --aicms-blue-light: #3d8bc4;
+  --aicms-blue-dark: #004c7d;
+  --aicms-ink: #1b2733;
+  --aicms-muted: #5b6b7a;
+  --aicms-rule: #dfe6ed;
+  --aicms-surface: #f6f9fc;
+}
+
+/* 深色模式：底色反转，主色提亮以保证对比度 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #4aa3dc;
+  --md-primary-fg-color--light: #79bce6;
+  --md-primary-fg-color--dark: #2d7fb8;
+
+  --aicms-blue: #4aa3dc;
+  --aicms-blue-light: #79bce6;
+  --aicms-blue-dark: #2d7fb8;
+  --aicms-ink: #e6edf3;
+  --aicms-muted: #9fb0c0;
+  --aicms-rule: #2b3947;
+  --aicms-surface: #1c2733;
+}
+
+/* --------------------------------------------------------------------------
+   2. 字体
+   主题默认加载 Roboto / Roboto Mono，中文会回落到系统字体。
+   这里显式指定中英混排栈，并让代码字体优先使用等宽中文，避免行内码字形跳变。
+   -------------------------------------------------------------------------- */
+:root {
+  --md-text-font-family: "Inter", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  --md-code-font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+    "PingFang SC", "Microsoft YaHei", monospace;
+}
+
+/* 标题使用更紧凑的字重与字距，中文标题不额外加粗以免笔画糊成一团 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   3. 顶部导航
+   -------------------------------------------------------------------------- */
+.md-header {
+  background: linear-gradient(
+    100deg,
+    var(--aicms-blue-dark) 0%,
+    var(--aicms-blue) 55%,
+    var(--aicms-blue-light) 100%
+  );
+}
+
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* 顶栏链接在深色底上需要提亮 */
+.md-header__button.md-logo img,
+.md-header__title,
+.md-header__topic {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   4. 侧边导航
+   -------------------------------------------------------------------------- */
+.md-nav__title {
+  font-weight: 700;
+  color: var(--aicms-blue);
+}
+
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: var(--aicms-blue);
+}
+
+/* 当前页高亮：主题用 font-weight，这里补一条左侧色条强化定位 */
+.md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-nav__item--section > .md-nav__link {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. 正文排版
+   -------------------------------------------------------------------------- */
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.75;
+}
+
+.md-typeset p,
+.md-typeset li {
+  line-height: 1.75;
+}
+
+/* 中文正文两端对齐会造成间距不均，保持左对齐更易读 */
+.md-typeset p {
+  text-align: left;
+}
+
+/* 链接下划线：悬停时才显现，避免正文被线条切割 */
+.md-typeset a:not(:hover) {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: var(--aicms-blue);
+}
+
+/* --------------------------------------------------------------------------
+   6. 代码块
+   -------------------------------------------------------------------------- */
+.md-typeset code {
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+/* 代码块头部（复制按钮所在行）*/
+.md-typeset pre > code {
+  padding: 0;
+}
+
+/* 行内代码在浅色底上更易辨识 */
+.md-typeset :not(pre) > code {
+  background: var(--aicms-surface);
+  border: 1px solid var(--aicms-rule);
+  color: var(--aicms-blue-dark);
+}
+
+[data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
+  color: var(--aicms-blue-light);
+}
+
+/* --------------------------------------------------------------------------
+   7. 表格
+   API 文档大量使用「字段名 / 类型 / 必填 / 说明」四列表格，
+   默认样式在窄屏下容易挤成一行，这里允许横向滚动并固定首列。
+   -------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--aicms-surface);
+  font-weight: 700;
+  color: var(--aicms-ink);
+  border-bottom: 2px solid var(--aicms-blue);
+  white-space: nowrap;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--aicms-rule);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--aicms-surface) 55%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   8. 提示框（admonition）
+   -------------------------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 6px;
+  box-shadow: none;
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  font-weight: 650;
+}
+
+/* --------------------------------------------------------------------------
+   9. 首页卡片
+   -------------------------------------------------------------------------- */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 8px;
+  border-top: 2px solid var(--aicms-blue);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgb(0 104 171 / 12%);
+}
+
+/* --------------------------------------------------------------------------
+   10. 通用微调
+   -------------------------------------------------------------------------- */
+.md-typeset hr {
+  border-bottom: 1px solid var(--aicms-rule);
+}
+
+/* 目录层级线条用品牌色，强化纵向层级感 */
+.md-nav__secondary .md-nav__link {
+  font-size: 0.66rem;
+}
+.iniframe {
+  
+}
