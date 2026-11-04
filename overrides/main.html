@@ -14,6 +14,20 @@
 {% block extrahead %}
   {{ super() }}
 
+  {#- 被 iframe 嵌入时给 body 加 .iniframe，配合 extra.css 隐藏顶栏/侧栏/页脚 -#}
+  <script>
+    if (window.top != window.self) {
+      var cb = function () {
+        if (document.body) document.body.classList.add("iniframe");
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', cb);
+      } else {
+        cb();
+      }
+    }
+  </script>
+
   {%- set page_title = page.title if page and page.title else config.site_name -%}
   {%- set page_desc = page.meta.description if page and page.meta and page.meta.description
       else config.site_description -%}
